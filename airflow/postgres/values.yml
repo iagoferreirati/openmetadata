@@ -88,9 +88,9 @@ affinity: {}
 
 volume:
   enabled: true
-  className: ""
+  className: "gp3"
   size: 3Gi
-  mountPath: /var/lib/postgresql/data
+  mountPath: /var/lib/postgresql/data 
 
 tests:
   enabled: true

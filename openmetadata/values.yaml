@@ -81,11 +81,15 @@ openmetadata:
       enabled: true
       className: "org.openmetadata.service.clients.pipeline.airflow.AirflowRESTClient"
       # endpoint url for airflow
-      apiEndpoint: http://openmetadata-dependencies-web:8080
+      apiEndpoint: http://my-airflow-web.airflow.svc.cluster.local:8080
       # this will be the api endpoint url of OpenMetadata Server
       metadataApiEndpoint: http://openmetadata:8585/api
       # possible values are "no-ssl", "ignore", "validate"
       verifySsl: "no-ssl"
+      parameters:
+        username: "admin"
+        password: "admin"
+        timeout: 10      
       hostIp: ""
       ingestionIpInfoEnabled: false
       # healthCheckInterval in seconds
@@ -95,7 +99,7 @@ openmetadata:
       auth:
         enabled: true
         username: admin
-        password:
+        password: 
           secretRef: airflow-secrets
           secretKey: openmetadata-airflow-password
         trustStorePath: ""

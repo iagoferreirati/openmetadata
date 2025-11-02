@@ -11,7 +11,7 @@ helm repo add open-metadata https://helm.open-metadata.org
 helm install openmetadata open-metadata/openmetadata
 If the default configuration is not applicable, you can update the values listed below in a values.yaml file and run
 
-helm upgrade openmetadata open-metadata/openmetadata --values values.yaml --namespace openmetadata
+helm upgrade -i openmetadata open-metadata/openmetadata --values values.yaml --namespace openmetadata --create-namespace
 
 
 Username - admin@open-metadata.org
